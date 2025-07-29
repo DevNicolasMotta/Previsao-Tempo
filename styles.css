@@ -6,13 +6,15 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("https://images.unsplash.com/photo-1495757450029-09dbedacbc36?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");    
-    
+    background-image: url("https://images.unsplash.com/photo-1495757450029-09dbedacbc36?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
 }
 
 .box-climate {
@@ -20,7 +22,7 @@ body {
     opacity: 0.8;
     border-radius: 25px;
     padding: 20px;
-    width: 90%;
+    width: 100%;
     max-width: 450px;
 }
 
@@ -29,10 +31,10 @@ body {
     outline: none;
     padding: 10px;
     border-radius: 25px;
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px); /* Tamanho adaptável */
     background-color: #7c7c7c2b;
     color: #ffffff;
-    width: calc(100vh - 400px);
+    width: 70%; /* Largura fixa relativa */
 }
 
 .button-search {
@@ -55,24 +57,26 @@ body {
 
 .city {
     color: #ffffff;
-    font-size: 28px;
+    font-size: clamp(24px, 6vw, 28px); /* Tamanho adaptável */
     font-weight: 300;
 }
 
 .temp {
-    font-size: 20px;
+    font-size: clamp(18px, 5vw, 20px); /* Tamanho adaptável */
     color: #ffffff;
     margin-top: 20px;
 }
 
 .forecast-img {
-
+    width: 40px;
+    height: 40px;
 }
 
 .forecast-text {
     color: #ffffff;
-    margin-left: 20px;
+    margin-left: 10px; /* Reduzido para mobile */
     text-transform: capitalize;
+    font-size: clamp(14px, 4vw, 16px); /* Tamanho adaptável */
 }
 
 .small-box {
@@ -82,6 +86,23 @@ body {
 }
 
 .humidity {
- color: #ffffff;
- margin-top: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+    font-size: clamp(14px, 4vw, 16px); /* Tamanho adaptável */
+}
+
+/* Media Query para telas muito pequenas */
+@media (max-width: 400px) {
+    .box-climate {
+        padding: 15px;
+    }
+    
+    .input-city {
+        width: 65%;
+        padding: 8px;
+    }
+    
+    .button-search {
+        padding: 8px;
+    }
 }
