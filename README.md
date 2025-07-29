@@ -1,4 +1,4 @@
-# Weather App 🌦️
+# App de Clima 🌦️
 
 Aplicativo de previsão do tempo que consome dados da API OpenWeatherMap para mostrar condições climáticas em tempo real de qualquer cidade do mundo.
 
